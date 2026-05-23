@@ -1,18 +1,16 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
-import starlightBlog from 'starlight-blog';
+
 import starlightLlmsTxt from 'starlight-llms-txt';
 import starlightCoolerCredit from 'starlight-cooler-credit';
 import starlightPageActions from 'starlight-page-actions';
 
-import { defineConfig, passthroughImageService } from 'astro/config';
+
 
 export default defineConfig({
   site: 'https://localhost:4321',
-  image: {
-    service: passthroughImageService(),
-  },
+  
   integrations: [
     starlight({
       favicon: '/favicon.svg',
@@ -62,21 +60,7 @@ export default defineConfig({
           projectName: 'AIRPindex',
           description: 'created by kurohomeless',
         }),
-        starlightBlog({
-          rss: true,
-          metrics: {
-            readingTime: true,
-            words: 'total',
-          },
-          authors: {
-            kuro: {
-              name: 'Kuro Homeless Queen',
-              title: 'Spiteful Cashier & AI hater',
-              picture: '/kurohomeless.webp',
-              url: 'https://kurohomeless.pages.dev/',
-            },
-          },
-        }),
+
         starlightCoolerCredit(),
       ],
       title: 'AIRPindex',
