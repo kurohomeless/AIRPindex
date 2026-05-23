@@ -1,0 +1,9 @@
+---
+// CuratedLayout.astro
+const t = Astro.locals.t;
+---
+
+<h1>{t('curated.title')}</h1>
+<p>{t('curated.description')}</p>
+{t('custom.label')}
+<slot />

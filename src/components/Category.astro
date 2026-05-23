@@ -1,0 +1,52 @@
+---
+import type { Lang } from '@/types/tools';
+import { allCategories as categories } from '@/data/tools';
+
+interface Props {
+  id: string;
+  lang?: Lang;
+}
+
+const { id, lang = 'en' } = Astro.props;
+
+const category = categories.find((c) => c.id === id);
+---
+
+{
+  category && (
+    <section>
+      <h3>{category.title[lang]}</h3>
+
+      {category.note && <p>{category.note[lang]}</p>}
+
+      <ul>
+        {category.items.map((tool) => (
+          <li>
+            {tool.tags?.includes('paid') && '💲'}
+            {tool.tags?.includes('starred') && '⭐'}
+            <a href={tool.url}>{tool.name}</a>
+            {tool.extraLinks?.length && (
+              <span>
+                {' — '}
+                {tool.extraLinks.map((l, i) => (
+                  <>
+                    <a href={l.url}>{l.label}</a>
+                    {i < tool.extraLinks.length - 1 && ' / '}
+                  </>
+                ))}
+              </span>
+            )}
+
+            <ul>
+              {tool.description?.[lang] && (
+                <li>
+                  <p>{tool.description[lang]}</p>
+                </li>
+              )}
+            </ul>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )
+}

@@ -10,8 +10,17 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/starlight": "^0.38.2",
-    "astro": "^6.0.8",
-    "sharp": "^0.34.2"
+    "@astrojs/starlight": "^0.39.2",
+    "astro": "^6.3.7",
+    "sharp": "^0.34.5",
+    "starlight-blog": "^0.26.1",
+    "starlight-cooler-credit": "^0.6.0",
+    "starlight-llms-txt": "^0.8.1",
+    "starlight-page-actions": "^0.6.0"
+  },
+  "devDependencies": {
+    "astro-vtbot": "^2.1.12",
+    "prettier": "^3.8.3",
+    "prettier-plugin-astro": "^0.14.1"
   }
 }

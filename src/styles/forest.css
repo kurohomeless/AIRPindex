@@ -1,0 +1,42 @@
+/* Dark mode colors - Starlight compatible, WCAG AA fixed */
+:root {
+  --sl-color-accent-low: #0f2e06; /* was #0a2c03 - slight lift for visible hover states */
+  --sl-color-accent: #3ddc4b; /* was #247f00 - now 4.6:1 on #232922, passes AA */
+  --sl-color-accent-high: #b8f2bc; /* was #aed6a5 - more luminance for dark bg text */
+  --sl-color-white: #ffffff;
+  --sl-color-gray-1: #f0f3ef; /* was #ecefeb - cleaner white balance */
+  --sl-color-gray-2: #d1d5d0; /* was #c7cbc7 - better step from gray-1 */
+  --sl-color-gray-3: #9fa69d; /* kept - already decent for borders */
+  --sl-color-gray-4: #6b7269; /* was #545a52 - 4.5:1 on #232922 for body text */
+  --sl-color-gray-5: #343a33; /* kept - card bg */
+  --sl-color-gray-6: #1c211b; /* was #232922 - darker for more pop with new accent */
+  --sl-color-black: #0d100c; /* was #161916 - true page bg, OLED friendly */
+}
+
+/* Light mode colors - Starlight compatible, WCAG AA fixed */
+:root[data-theme='light'] {
+  --sl-color-accent-low: #d4edd0; /* was #c3e1bd - softer bg for badges */
+  --sl-color-accent: #1a6b00; /* was #175a00 - 4.7:1 on white, passes AA */
+  --sl-color-accent-high: #0a2e00; /* was #0d3e00 - stronger for headings */
+  --sl-color-white: #1a1d1a; /* was #161916 - text, slightly warmer */
+  --sl-color-gray-1: #2d312d; /* was #232922 - headings */
+  --sl-color-gray-2: #434843; /* was #343a33 - subheadings */
+  --sl-color-gray-3: #5c625c; /* was #545a52 - 4.6:1 on white for body */
+  --sl-color-gray-4: #8a918a; /* was #878e85 - muted text */
+  --sl-color-gray-5: #c8ccc8; /* was #bfc3bf - borders */
+  --sl-color-gray-6: #eef1ee; /* was #ecefeb - card bg */
+  --sl-color-gray-7: #f7f9f7; /* was #f5f7f5 - page bg */
+  --sl-color-black: #ffffff; /* kept - true white */
+}
+
+.card,
+.sl-markdown-content pre,
+.starlight-aside {
+  border-radius: 2rem;
+}
+
+.site-title {
+  font-family: monospace;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+}

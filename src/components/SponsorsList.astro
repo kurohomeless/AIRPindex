@@ -1,0 +1,86 @@
+---
+const specialThanks = [{ name: 'Coffee Fox' }, { name: 'PotatoP0uch' }];
+
+const backers = [{ name: 'Apollo' }];
+
+const sortAlphabetically = (a: { name: string }, b: { name: string }) => {
+  return a.name.localeCompare(b.name, undefined, { sensitivity: 'base' });
+};
+
+const sortedBackers = [...backers].sort(sortAlphabetically);
+---
+
+<div class="sponsors-container">
+  {
+    specialThanks.length > 0 && (
+      <div class="sponsor-tier special-tier">
+        <h3>Special Thanks</h3>
+        <div class="special-grid">
+          {specialThanks.map((sp) =>
+            sp.url ? (
+              <a href={sp.url} target="_blank" rel="noopener noreferrer" class="vip-card">
+                ★ {sp.name} ★
+              </a>
+            ) : (
+              <span class="vip-card">★ {sp.name} ★</span>
+            ),
+          )}
+        </div>
+      </div>
+    )
+  }
+
+  {
+    sortedBackers.length > 0 && (
+      <div class="sponsor-tier backers-tier">
+        <h3>Backers & Donators</h3>
+        <ul class="backers-list">
+          {sortedBackers.map((sp) => (
+            <li>
+              {sp.url ? (
+                <a href={sp.url} target="_blank" rel="noopener noreferrer">
+                  {sp.name}
+                </a>
+              ) : (
+                <span>{sp.name}</span>
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
+    )
+  }
+</div>
+
+<style>
+  .sponsors-container {
+    margin: 2rem 0;
+  }
+  .sponsor-tier {
+    margin-bottom: 2rem;
+  }
+  .sponsor-tier h3 {
+    margin-bottom: 0.75rem;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.25rem;
+  }
+  .special-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .vip-card {
+    background: linear-gradient(135deg, #ffe066 0%, #f59f00 100%);
+    color: #1a1a1a !important;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none !important;
+    display: inline-block;
+  }
+  .backers-list {
+    column-width: 200px; /* Splits long list into clean columns if screen width allows */
+    gap: 1.5rem;
+  }
+</style>
