@@ -9,7 +9,7 @@ import starlightPageActions from 'starlight-page-actions';
 
 
 export default defineConfig({
-  site: 'https://localhost:4321',
+  site: 'https://airpindex.pages.dev/',
   
   integrations: [
     starlight({
